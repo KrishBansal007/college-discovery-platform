@@ -1,4 +1,5 @@
 import { getCollegeById } from "@/lib/colleges";
+import { colleges } from "@/data/colleges";
 import { notFound } from "next/navigation";
 import { formatCurrency, formatDate, formatLocation, formatPackage } from "@/lib/format";
 import { Rating } from "@/components/ui/Rating";
@@ -19,6 +20,12 @@ export async function generateMetadata({ params }: PageProps) {
     title: `${college.name} — EduFind`,
     description: college.overview.slice(0, 160),
   };
+}
+
+export async function generateStaticParams() {
+  return colleges.map((college) => ({
+    id: college.id,
+  }));
 }
 
 export const unstable_instant = {
