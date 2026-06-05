@@ -6,7 +6,10 @@ export const metadata = {
   description: "Search and filter top colleges across India with ratings, fees, and placement data.",
 };
 
-export const unstable_instant = { prefetch: "static" };
+export const unstable_instant = {
+  prefetch: "static",
+  unstable_disableValidation: true,
+};
 
 export default function CollegesPage() {
   return (

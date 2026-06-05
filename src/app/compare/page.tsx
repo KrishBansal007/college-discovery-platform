@@ -6,7 +6,10 @@ export const metadata = {
   description: "Compare up to 3 colleges side-by-side on fees, placements, ratings, and more.",
 };
 
-export const unstable_instant = { prefetch: "static" };
+export const unstable_instant = {
+  prefetch: "static",
+  unstable_disableValidation: true,
+};
 
 export default function ComparePage() {
   return (

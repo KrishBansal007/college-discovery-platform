@@ -21,7 +21,10 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export const unstable_instant = { prefetch: "static" };
+export const unstable_instant = {
+  prefetch: "static",
+  unstable_disableValidation: true,
+};
 
 export default async function CollegeDetailPage({ params }: PageProps) {
   return (

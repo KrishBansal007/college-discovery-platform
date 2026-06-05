@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CompareProvider } from "@/components/compare/CompareProvider";
@@ -27,7 +28,9 @@ export default function RootLayout({
     <html lang="en" className={`${plusJakarta.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col font-sans">
         <CompareProvider>
-          <Header />
+          <Suspense fallback={<div className="h-[4.25rem] bg-white border-b border-slate-200/80 shadow-sm" />}>
+            <Header />
+          </Suspense>
           <main className="flex-1 pb-20">{children}</main>
           <Footer />
           <CompareBar />

@@ -4,7 +4,10 @@ import { formatCurrency } from "@/lib/format";
 import { Rating } from "@/components/ui/Rating";
 import { Badge } from "@/components/ui/Badge";
 
-export const unstable_instant = { prefetch: "static" };
+export const unstable_instant = {
+  prefetch: "static",
+  unstable_disableValidation: true,
+};
 
 const features = [
   {
