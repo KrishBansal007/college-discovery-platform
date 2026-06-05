@@ -96,3 +96,14 @@ src/
 └── types/                # TypeScript type declarations
 ```
 
+---
+
+## ⚖️ Technical Tradeoffs
+
+| Decision | Tradeoff / Rationale |
+|----------|----------------------|
+| **Static dataset vs. full database** | Faster prototype execution. We modeled mock API endpoints (`/api/colleges` and `/api/predictor`) to simulate query latency, making it straightforward to swap out the data provider for a live database client (e.g., Prisma + PostgreSQL) in the future. |
+| **Client-side state & URL synchronization** | Syncing state to URL search parameters makes search queries and filter configurations shareable, but requires careful routing context wrapping (like `<Suspense>`) during static building. |
+| **LocalStorage for Compare basket** | Avoids server-side authentication overhead and keeps session state persistent and instantaneous, though basket choices will not sync across different devices. |
+
+
